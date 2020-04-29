@@ -85,4 +85,11 @@ class Client
     {
         return $this->client->close();
     }
+
+    public function __call($name, $arguments)
+    {
+        if(method_exists($this->client,$name)){
+            return $this->client->$name(...$arguments);
+        }
+    }
 }
