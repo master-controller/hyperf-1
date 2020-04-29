@@ -91,5 +91,6 @@ class Client
         if(method_exists($this->client,$name)){
             return $this->client->$name(...$arguments);
         }
+        return -1;
     }
 }
